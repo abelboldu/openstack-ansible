@@ -145,6 +145,10 @@
   include: plumgrid_config.yml
   when: neutron_plugin_type == 'plumgrid'
 
+- name: Setup midonet config
+  include: midonet_config.yml
+  when: neutron_plugin_type == 'midonet'
+
 - name: Get neutron command path
   command: which neutron
   register: neutron_command_path
