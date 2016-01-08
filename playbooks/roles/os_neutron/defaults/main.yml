@@ -79,10 +79,11 @@ neutron_plugin_core: "{{ neutron_plugins[neutron_plugin_type].plugin_core }}"
 neutron_plugin_base:
   - neutron.services.l3_router.l3_router_plugin.L3RouterPlugin
   - neutron.services.metering.metering_plugin.MeteringPlugin
+# - lbaas ## Set to lbaas if midonet is installed and lbaas support is desired.
 neutron_plugin_loaded_base: "{% for plugin in neutron_plugin_base %}{{ plugin }}{% if not loop.last %},{% endif %}{% endfor %}"
 
 # Neutron Plugins
-neutron_plugin_type: ml2
+neutron_plugin_type: midonet
 
 neutron_plugins:
   ml2:
@@ -93,6 +94,11 @@ neutron_plugins:
     plugin_core: neutron.plugins.plumgrid.plumgrid_plugin.plumgrid_plugin.NeutronPluginPLUMgridV2
     plugin_ini: plugins/plumgrid/plumgrid.ini
     plugin_conf_ini_overrides: "{{ neutron_plumgrid_conf_ini_overrides }}"
+  midonet:
+    plugin_core: midonet.neutron.plugin.MidonetPluginV2
+    plugin_ini: plugins/midonet/midonet_plugin.ini
+    plugin_conf_ini_overrides: "{{ neutron_midonet_conf_ini_overrides }}"
+
 
 neutron_services:
  neutron-dhcp-agent:
@@ -347,11 +353,15 @@ neutron_pip_packages:
 neutron_plumgrid_pip_packages:
   - networking-plumgrid
 
+neutron_midonet_pip_packages:
+  - networking-midonet
+
 ## Tunable overrides
 neutron_neutron_conf_overrides: {}
 neutron_ml2_conf_ini_overrides: {}
 neutron_plumgrid_conf_ini_overrides: {}
 neutron_plumlib_ini_overrides: {}
+neutron_midonet_ini_overrides: {}
 neutron_dhcp_agent_ini_overrides: {}
 neutron_api_paste_ini_overrides: {}
 neutron_rootwrap_conf_overrides: {}
