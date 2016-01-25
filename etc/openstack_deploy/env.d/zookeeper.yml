@@ -13,10 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: zookeeper-install.yml
-- include: memcached-install.yml
-- include: repo-install.yml
-- include: galera-install.yml
-- include: rabbitmq-install.yml
-- include: utility-install.yml
-- include: rsyslog-install.yml
+component_skel:
+  zookeeper:
+    belongs_to:
+      - zookeeper_all
+
+
+container_skel:
+  zookeeper_container:
+    belongs_to:
+      - infra_containers
+      - shared-infra_containers
+    contains:
+      - zookeeper
+    properties:
+      service_name: zookeeper
+      container_release: trusty
