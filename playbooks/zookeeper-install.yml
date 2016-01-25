@@ -31,7 +31,7 @@
     - role: "pip_lock_down"
       when: "(groups['repo_all'] | length) >= 1"
     - role: "zookeeper_server"
-      zookeeper_hosts: '{{ groups["zookepper_all"] }}'
+      zookeeper_hosts: '{{ groups["zookeeper_all"] }}'
       tags:
         - "zookepper-server"
         - "upgrade-zookeeper-server"
