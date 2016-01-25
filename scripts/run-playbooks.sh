@@ -135,6 +135,7 @@ pushd "playbooks"
 
   if [ "${DEPLOY_INFRASTRUCTURE}" == "yes" ]; then
     # Install all of the infra bits
+    install_bits zookeeper-install.yml
     install_bits memcached-install.yml
     install_bits repo-install.yml
 

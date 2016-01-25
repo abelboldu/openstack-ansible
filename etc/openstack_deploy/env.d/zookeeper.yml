@@ -16,7 +16,7 @@
 component_skel:
   zookeeper:
     belongs_to:
-      - zookepper_all
+      - zookeeper_all
 
 
 container_skel:
