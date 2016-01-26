@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Copyright 2015, Rackspace US, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -140,6 +141,7 @@ function main {
     "${SCRIPTS}/bootstrap-ansible.sh"
 
     pushd ${MAIN_PATH}/playbooks
+        RUN_TASKS+=("${UPGRADE_PLAYBOOKS}/cleanup-rabbitmq-vhost.yml")
         # Run the tasks in order
         for item in ${!RUN_TASKS[@]}; do
           run_lock $item "${RUN_TASKS[$item]}"
