@@ -64,6 +64,14 @@
       override: "{{ pkg_repo_env_overrides | default({}) }}"
     - name: rabbitmq.yml
       override: "{{ rabbitmq_env_overrides | default({}) }}"
+    - name: zookeeper.yml
+      override: "{{ zookeeper_env_overrides | default({}) }}"
+    - name: cassandra.yml
+      override: "{{ cassandra_env_overrides | default({}) }}"
+    - name: midonet-agent.yml
+      override: "{{ cassandra_env_overrides | default({}) }}"
+    - name: midonet-cluster.yml
+      override: "{{ cassandra_env_overrides | default({}) }}"
     - name: rsyslog.yml
       override: "{{ rsyslog_env_overrides | default({}) }}"
     - name: shared-infra.yml

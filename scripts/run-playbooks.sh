@@ -138,6 +138,12 @@ pushd "playbooks"
     install_bits memcached-install.yml
     install_bits repo-install.yml
 
+    # MidoNet stuff
+    install_bits zookeeper.yml
+    install_bits cassandra.yml
+    install_bits midonet-agent.yml
+    install_bits midonet-cluster.yml
+
     mkdir -p "${COMMAND_LOGS}/repo_data"
     ansible 'repo_all[0]' -m raw \
                           -a 'find  /var/www/repo/os-releases -type l' \
