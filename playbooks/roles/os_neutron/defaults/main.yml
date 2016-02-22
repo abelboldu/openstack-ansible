@@ -378,7 +378,7 @@ neutron_optional_plumgrid_pip_packages:
   - networking-plumgrid==2015.2.1.1
 
 neutron_midonet_pip_packages:
-  - networking-midonet
+  - networking-midonet==1.0.0
 
 ## Tunable overrides
 neutron_neutron_conf_overrides: {}
