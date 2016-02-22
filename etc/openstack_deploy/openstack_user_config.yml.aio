@@ -74,6 +74,8 @@ shared-infra_hosts:
     affinity:
       galera_container: 3
       rabbit_mq_container: 3
+      zookeeper_container: 3
+      cassandra_container: 3
     ip: 172.29.236.100
 
 os-infra_hosts:
