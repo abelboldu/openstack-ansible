@@ -98,6 +98,8 @@
       override: "{{ ceilometer_conf_overrides | default({}) }}"
     - name: swift.yml.aio
       override: "{{ swift_conf_overrides | default({}) }}"
+    - name: midonet.yml.aio
+      override: "{{ midonet_conf_overrides | default({}) }}"
   tags:
     - deploy-confd
 
