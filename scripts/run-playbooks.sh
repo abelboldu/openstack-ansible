@@ -139,10 +139,10 @@ pushd "playbooks"
     install_bits repo-install.yml
 
     # MidoNet stuff
-    install_bits zookeeper.yml
-    install_bits cassandra.yml
-    install_bits midonet-agent.yml
-    install_bits midonet-cluster.yml
+    install_bits zookeeper-install.yml
+    install_bits cassandra-install.yml
+    install_bits midonet-agent-install.yml
+    install_bits midonet-cluster-install.yml
 
     mkdir -p "${COMMAND_LOGS}/repo_data"
     ansible 'repo_all[0]' -m raw \
