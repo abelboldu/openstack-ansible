@@ -98,8 +98,6 @@
       override: "{{ ceilometer_conf_overrides | default({}) }}"
     - name: swift.yml.aio
       override: "{{ swift_conf_overrides | default({}) }}"
-    - name: midonet.yml.aio
-      override: "{{ midonet_conf_overrides | default({}) }}"
   tags:
     - deploy-confd
 
@@ -129,6 +127,16 @@
     config_type: "yaml"
   tags:
     - deploy-user-secrets
+
+- name: Deploy user_midonet file
+  config_template:
+    src: "../etc/openstack_deploy/user_midonet.yml"
+    dest: "/etc/openstack_deploy/user_midonet.yml"
+    config_overrides: "{{ user_midonet_overrides | default({}) }}"
+    config_type: "yaml"
+  tags:
+    - deploy-user-midonet
+
 
 - name: Generate any missing values in user_secrets
   shell: ../scripts/pw-token-gen.py --file /etc/openstack_deploy/user_secrets.yml
