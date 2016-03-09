@@ -5,7 +5,9 @@
   max_fail_percentage: 0
   user: root
   roles:
-    - midonet_agent
+    - role: "midonet_repos"
+      midonet_version: current
+    - role: midonet_agent
   vars:
     zookeeper_hosts: '{{ groups["zookeeper_all"] }}'
     midonet_password: '{{ midonet_api_password }}'
@@ -17,7 +19,9 @@
   max_fail_percentage: 0
   user: root
   roles:
-    - midonet_agent
+    - role: "midonet_repos"
+      midonet_version: current
+    - role: midonet_agent
   vars:
     zookeeper_hosts: '{{ groups["zookeeper_all"] }}'
     midonet_password: '{{ midonet_api_password }}'
