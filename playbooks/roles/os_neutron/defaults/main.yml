@@ -389,6 +389,7 @@ neutron_neutron_conf_overrides: {}
 neutron_ml2_conf_ini_overrides: {}
 neutron_plumgrid_conf_ini_overrides: {}
 neutron_plumlib_ini_overrides: {}
+neutron_midonet_conf_ini_overrides: {}
 neutron_midonet_ini_overrides: {}
 neutron_dhcp_agent_ini_overrides: {}
 neutron_api_paste_ini_overrides: {}
