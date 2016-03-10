@@ -141,9 +141,9 @@ pushd "playbooks"
     # MidoNet stuff
     install_bits zookeeper-install.yml
     install_bits cassandra-install.yml
-    install_bits midonet-agent-install.yml
     install_bits midonet-cluster-install.yml
-
+    install_bits midonet-agent-install.yml
+    
     mkdir -p "${COMMAND_LOGS}/repo_data"
     ansible 'repo_all[0]' -m raw \
                           -a 'find  /var/www/repo/os-releases -type l' \
