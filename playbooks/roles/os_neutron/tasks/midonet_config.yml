@@ -14,7 +14,7 @@
 
 - name: Setup Midonet Neutron Config
   config_template:
-    src: plugins/midonet/midonet.ini
+    src: plugins/midonet/midonet_plugin.ini.j2
     dest: /etc/neutron/plugins/midonet/midonet_plugin.ini
     owner: "{{ neutron_system_user_name }}"
     group: "{{ neutron_system_group_name }}"
