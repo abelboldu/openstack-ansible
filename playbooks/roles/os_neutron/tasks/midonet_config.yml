@@ -12,16 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Setup Midonet Neutron Config
-  config_template:
-    src: plugins/midonet/midonet_plugin.ini.j2
-    dest: /etc/neutron/plugins/midonet/midonet_plugin.ini
-    owner: "{{ neutron_system_user_name }}"
-    group: "{{ neutron_system_group_name }}"
-    config_type: "ini"
-  tags:
-    - neutron_config
-
 - name: Install networking-midonet
   apt:
     pkg: "{{ item }}"
