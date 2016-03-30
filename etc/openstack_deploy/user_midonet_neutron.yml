@@ -1,5 +1,7 @@
 # Enable midonet plugin
 neutron_plugin_type: midonet
+# Do not install neutron on venv (alongside with midonet packages)
+neutron_venv_enabled: false
 # Neutron Services
 neutron_services:
  neutron-dhcp-agent:
