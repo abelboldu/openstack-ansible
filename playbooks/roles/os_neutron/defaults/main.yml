@@ -377,8 +377,8 @@ neutron_pip_packages:
 neutron_optional_plumgrid_pip_packages:
   - networking-plumgrid==2015.2.1.1
 
-#neutron_midonet_pip_packages:
-#  - networking-midonet==1.0.0
+neutron_midonet_pip_packages:
+  - networking-midonet==1.0.0
 
 neutron_midonet_apt_packages:
   - python-networking-midonet
